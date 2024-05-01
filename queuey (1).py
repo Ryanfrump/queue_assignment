@@ -23,7 +23,9 @@ class Queuey:
         if self.size == 0:
             return None
         self.size -= 1
-        return self.q.pop(0)
+        dequeued_item = self.q[0]
+        del self.q[0]
+        return dequeued_item
 
     def peek(self):
         """ Returns the next item in the queue, but does not remove it. If there is nothing in the queue, return None. """
